@@ -1,0 +1,9 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\91998\\OneDrive\\Desktop\\Projects\\EmployeeManagementSystem\\EMS\\Libraries\\mysql-connector-java-8.0.28.jar",
+        "c:\\webswing-examples-eval-24.1.6\\api\\webswing-server-security-api.jar",
+        "c:\\webswing-examples-eval-24.1.6\\server\\webswing-jetty-launcher.jar"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
+}
