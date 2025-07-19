@@ -109,7 +109,6 @@ public class Login extends JFrame implements ActionListener {
 
                 } else {
                     JOptionPane.showMessageDialog(null, "incorrect username or password");
-
                 }
 
             } catch (Exception e) {

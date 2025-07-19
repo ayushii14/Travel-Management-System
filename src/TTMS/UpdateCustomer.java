@@ -7,14 +7,13 @@ import java.awt.event.*;
 import java.sql.ResultSet;
 import javax.swing.*;
 
-
 import javax.swing.*;
 
 public class UpdateCustomer extends JFrame implements ActionListener {
 
     JLabel lblusername, labelusername, lblid, labelname;
-   
-    JTextField tfnumber, tfcountry, tfaddress, tfemail, tfphone,tfid,tfgender;
+
+    JTextField tfnumber, tfcountry, tfaddress, tfemail, tfphone, tfid, tfgender;
     JRadioButton rmale, rfemale;
     JButton update, back;
 
@@ -40,7 +39,6 @@ public class UpdateCustomer extends JFrame implements ActionListener {
         lblid.setBounds(30, 90, 150, 25);
         add(lblid);
 
-
         tfid = new JTextField();
         tfid.setBounds(220, 90, 150, 25);
         add(tfid);
@@ -65,11 +63,11 @@ public class UpdateCustomer extends JFrame implements ActionListener {
         lblgender.setBounds(30, 210, 150, 25);
         add(lblgender);
 
-        tfgender= new JTextField();
+        tfgender = new JTextField();
         tfgender.setBounds(220, 210, 150, 25);
         add(tfgender);
 
-       JLabel lblcountry = new JLabel("Country");
+        JLabel lblcountry = new JLabel("Country");
         lblcountry.setBounds(30, 250, 150, 25);
         add(lblcountry);
 
@@ -104,8 +102,7 @@ public class UpdateCustomer extends JFrame implements ActionListener {
         tfemail.setBounds(220, 370, 150, 25);
         add(tfemail);
 
-
-        update= new JButton("UPDATE");
+        update = new JButton("UPDATE");
         update.setBounds(250, 430, 100, 25);
         update.setBackground(Color.black);
         update.setForeground(Color.WHITE);
@@ -162,12 +159,16 @@ public class UpdateCustomer extends JFrame implements ActionListener {
 
             try {
                 Conn c = new Conn();
-                String query = "update customer set username='" + username + "', id='" + id + "',number='" + number + "', name= '" + name
-                        + "',gender= '" + gender + "', country='" + country + "', address='" + address + "',phone='" + phone + "',email='" + email + "'";
-                c.s.executeUpdate(query);
+                String query = "update customer set username='" + username + "', id='" + id + "',number='" + number
+                        + "', name= '" + name
+                        + "',gender= '" + gender + "', country='" + country + "', address='" + address + "',phone='"
+                        + phone + "',email='" + email + "'";
+                ResultSet rs = c.s.executeQuery(query);
+                if (rs.next()) {
 
-                JOptionPane.showMessageDialog(null, "Customer Details Updated Successfully");
-                setVisible(false);
+                    JOptionPane.showMessageDialog(null, "Customer Details Updated Successfully");
+                    setVisible(false);
+                }
 
             } catch (Exception e) {
                 e.printStackTrace();
